@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Recording Uploader</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 40px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 8px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    #connectionStatus {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      background: #ccc;
+      color: #333;
+    }
+
+    #logs {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      height: 200px;
+      overflow-y: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>מנגנון העלאת הקלטות</h1>
+
+  <div id="connectionStatus">● בודק חיבור...</div>
+
+  <div>
+    <button id="startBtn">Start Recording</button>
+    <button id="stopBtn" disabled>Stop Recording</button>
+  </div>
+
+  <label style="display:block; margin:16px 0;">
+    <input type="checkbox" id="failToggle"> דמה כשל רשת (Fail Mode)
+  </label>
+  <div id="progressBox" style="margin:16px 0; padding:16px; background:#f0f4ff; border-radius:8px;">
+    <div id="progressText" style="font-size:14px; margin-bottom:8px; font-weight:bold;">
+      📊 נשמרו: 0 • הועלו: 0 • ממתינים: 0
+    </div>
+    <div style="background:#ddd; border-radius:10px; height:20px; overflow:hidden;">
+      <div id="progressBar" style="background:#4caf50; height:100%; width:0%; transition:width 0.3s;"></div>
+    </div>
+  </div>
+  <div id="logs"></div>
+
+  <button id="showRecordingsBtn" style="margin-top:16px;">הצג הקלטות מהשרת</button>
+  <div id="recordings" style="margin-top:12px; padding:16px; background:#eef; border-radius:8px;"></div>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+
+</html>

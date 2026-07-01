@@ -1,4 +1,21 @@
-﻿node_modules/
+﻿# Dependencies
+node_modules/
+
+# Build output (נוצר עם npm run build)
+dist/
+
+# Recordings & merged videos (נוצרים בזמן ריצה, כבדים - לא צריכים בגיט)
+storage/
+completed/
+
+# Environment & logs
 .env
 *.log
+
+# Editor
 .vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
